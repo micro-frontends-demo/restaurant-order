@@ -1,0 +1,29 @@
+{
+  "name": "@micro-frontends-demo/restaurant-order",
+  "version": "1.0.0",
+  "description": "A micro frontend for ordering food from a restaurant",
+  "repository": "git@github.com:micro-frontends-demo/restaurant-order",
+  "author": "Cam Jackson",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier --write",
+    "start": "PORT=3002 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4"
+  },
+  "devDependencies": {
+    "prettier": "^1.11.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "printWidth": 100
+  }
+}

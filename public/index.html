@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="stylesheet" href="http://localhost:5000/style.css"></link>
+    <link href="https://fonts.googleapis.com/css?family=Francois+One|Yanone+Kaffeesatz" rel="stylesheet">
+    <title>Restaurant order</title>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <main id="container"></main>
+    <script type="text/javascript">
+      function tryRender() {
+        if (window.renderRestaurant) {
+          window.renderRestaurant('container');
+        } else {
+          setTimeout(tryRender, 100);
+        }
+      }
+      tryRender();
+    </script>
+  </body>
+</html>
