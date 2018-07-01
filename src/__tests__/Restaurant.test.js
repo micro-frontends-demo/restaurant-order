@@ -24,6 +24,6 @@ describe('Restaurant', () => {
     await new Promise(setTimeout);
     restaurant.update();
 
-    expect(restaurant).toHaveText('Curry delights');
+    expect(restaurant).toIncludeText('Curry delights');
   });
 });
