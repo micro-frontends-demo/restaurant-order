@@ -46,6 +46,37 @@ const OrderButton = styled.button`
 `;
 
 class RestaurantDetails extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      quantities: props.restaurant.menu.reduce(
+        (result, menuItem) => ({
+          ...result,
+          [menuItem.item]: 0,
+        }),
+        {},
+      ),
+    };
+  }
+
+  change = delta => item => () => {
+    this.setState(oldState => ({
+      quantities: {
+        ...oldState.quantities,
+        [item]: oldState.quantities[item] + delta,
+      },
+    }));
+  };
+
+  submitOrder = () => {
+    alert(
+      `Thank you for your order of the following delicious JSON:\n
+  ${JSON.stringify(this.state.quantities)}\n
+(This is the end of the demo)`,
+    );
+  };
+
   render() {
     const {
       menu,
@@ -55,12 +86,23 @@ class RestaurantDetails extends React.Component {
       description,
     } = this.props.restaurant;
 
+    const total = menu.reduce(
+      (sum, menuItem) =>
+        sum + this.state.quantities[menuItem.item] * menuItem.price,
+      0,
+    );
+
     return (
       <Container>
         <LeftColumn>
-          <Menu menu={menu} />
-          <Total>Total: $0</Total>
-          <OrderButton>Order now</OrderButton>
+          <Menu
+            menu={menu}
+            quantities={this.state.quantities}
+            increase={this.change(1)}
+            decrease={this.change(-1)}
+          />
+          <Total>Total: ${total}</Total>
+          <OrderButton onClick={this.submitOrder}>Order now</OrderButton>
         </LeftColumn>
         <section>
           <RestaurantName>{name}</RestaurantName>

@@ -21,24 +21,37 @@ const Button = styled.button`
   font-size: 18px;
 `;
 
-const Menu = ({ menu }) => (
+const MenuRow = ({ item, price, quantity, increase, decrease }) => (
+  <tr>
+    <Td>${price}</Td>
+    <Td>{item}</Td>
+    <Td>
+      <Button onClick={decrease} disabled={quantity === 0}>
+        -
+      </Button>
+    </Td>
+    <Td>x{quantity}</Td>
+    <Td>
+      <Button onClick={increase}>+</Button>
+    </Td>
+    <Td>${quantity * price}</Td>
+  </tr>
+);
+
+const Menu = ({ menu, quantities, increase, decrease }) => (
   <Container>
     <Title>Menu:</Title>
     <table>
       <tbody>
         {menu.map(menuItem => (
-          <tr key={menuItem.item}>
-            <Td>${menuItem.price}</Td>
-            <Td>{menuItem.item}</Td>
-            <Td>
-              <Button>-</Button>
-            </Td>
-            <Td>x0</Td>
-            <Td>
-              <Button>+</Button>
-            </Td>
-            <Td>$0</Td>
-          </tr>
+          <MenuRow
+            key={menuItem.item}
+            item={menuItem.item}
+            price={menuItem.price}
+            quantity={quantities[menuItem.item]}
+            increase={increase(menuItem.item)}
+            decrease={decrease(menuItem.item)}
+          />
         ))}
       </tbody>
     </table>
