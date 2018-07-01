@@ -5,10 +5,9 @@ const Title = styled.h2`
   font-size: 30px;
 `;
 
-const Section = styled.section`
+const Container = styled.div`
   margin-top: 50px;
   width: 500px;
-  height: 300px;
 `;
 
 const Td = styled.td`
@@ -23,7 +22,7 @@ const Button = styled.button`
 `;
 
 const Menu = ({ menu }) => (
-  <Section>
+  <Container>
     <Title>Menu:</Title>
     <table>
       <tbody>
@@ -43,7 +42,7 @@ const Menu = ({ menu }) => (
         ))}
       </tbody>
     </table>
-  </Section>
+  </Container>
 );
 
 export default Menu;
