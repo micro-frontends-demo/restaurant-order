@@ -1,4 +1,5 @@
 import React from 'react';
+import RestaurantDetails from './RestaurantDetails';
 
 class Restaurant extends React.Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class Restaurant extends React.Component {
       return 'Sorry, but that restaurant is currently unavailable.';
     }
 
-    return <h1>{this.state.restaurant.name}</h1>;
+    return <RestaurantDetails restaurant={this.state.restaurant} />;
   }
 }
 
