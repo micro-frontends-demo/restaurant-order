@@ -15,7 +15,7 @@ describe('Restaurant', () => {
   });
 
   it('shows the restaurant information once the data has loaded', async () => {
-    fetch.once(JSON.stringify({ id: 5, name: 'Curry delights' }));
+    fetch.once(JSON.stringify({ id: 5, name: 'Curry delights', menu: [] }));
 
     const restaurant = mount(<Restaurant match={{ params: { id: '5' } }} />);
 
