@@ -7,16 +7,17 @@
   "license": "MIT",
   "scripts": {
     "format": "prettier --write",
-    "start": "PORT=3002 react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "PORT=3002 react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test"
   },
   "dependencies": {
+    "history": "^4.7.2",
     "react": "^16.4.0",
+    "react-app-polyfill": "^0.2.2",
     "react-dom": "^16.4.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4",
+    "react-scripts": "^2.1.8",
     "styled-components": "^3.3.2"
   },
   "devDependencies": {
@@ -24,10 +25,19 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "jest-enzyme": "^6.0.2",
     "jest-fetch-mock": "^1.6.5",
-    "prettier": "^1.11.1"
+    "prettier": "^1.11.1",
+    "react-app-rewire-disable-chunks": "^0.0.1",
+    "react-app-rewired": "^2.1.1"
   },
+  "config-overrides-path": "node_modules/react-app-rewire-disable-chunks",
   "prettier": {
     "singleQuote": true,
     "trailingComma": "all"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
