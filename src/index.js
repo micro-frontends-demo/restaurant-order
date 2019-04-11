@@ -11,3 +11,7 @@ window.renderRestaurant = (containerId, history) => {
   );
   unregister();
 };
+
+window.unmountRestaurant = containerId => {
+  ReactDOM.unmountComponentAtNode(document.getElementById(containerId));
+};
