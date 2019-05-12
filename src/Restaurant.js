@@ -15,6 +15,7 @@ class Restaurant extends React.Component {
   componentDidMount() {
     const host = process.env.REACT_APP_CONTENT_HOST;
     const id = this.props.match.params.id;
+
     fetch(`${host}/restaurants/${id}.json`)
       .then(result => result.json())
       .then(restaurant => {

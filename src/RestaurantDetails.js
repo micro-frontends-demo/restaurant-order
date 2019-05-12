@@ -2,14 +2,29 @@ import React from 'react';
 import styled from 'styled-components';
 import Menu from './Menu';
 
+const smallScreen = `@media(max-width: 1050px)`;
+
 const Container = styled.div`
   display: flex;
   justify-content: space-around;
+
+  ${smallScreen} {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
-const LeftColumn = styled.section`
+const MenuColumn = styled.section`
   display: flex;
+  max-width: 100%;
   flex-direction: column;
+`;
+
+const ImageColumn = styled.section`
+  max-width: 100%;
+  ${smallScreen} {
+    order: -1;
+  }
 `;
 
 const RestaurantName = styled.h1`
@@ -19,6 +34,7 @@ const RestaurantName = styled.h1`
 
 const Img = styled.img`
   width: 500px;
+  max-width: 100%;
   margin-bottom: 10px;
 `;
 
@@ -94,7 +110,7 @@ class RestaurantDetails extends React.Component {
 
     return (
       <Container>
-        <LeftColumn>
+        <MenuColumn>
           <Menu
             menu={menu}
             quantities={this.state.quantities}
@@ -103,14 +119,14 @@ class RestaurantDetails extends React.Component {
           />
           <Total>Total: ${total}</Total>
           <OrderButton onClick={this.submitOrder}>Order now</OrderButton>
-        </LeftColumn>
-        <section>
+        </MenuColumn>
+        <ImageColumn>
           <RestaurantName>{name}</RestaurantName>
           <Figure>
             <Img src={imageSrc} alt={imageDescription} />
             <Caption>{description}</Caption>
           </Figure>
-        </section>
+        </ImageColumn>
       </Container>
     );
   }
