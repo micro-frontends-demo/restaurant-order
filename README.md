@@ -1,5 +1,7 @@
 # Restaurant order
 
+[![Build Status](https://travis-ci.org/micro-frontends-demo/restaurant-order.svg?branch=master)](https://travis-ci.org/micro-frontends-demo/restaurant-order)
+
 A micro frontend for ordering food from a restaurant
 
 # Getting started
