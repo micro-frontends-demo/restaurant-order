@@ -18,6 +18,9 @@ const MenuColumn = styled.section`
   display: flex;
   max-width: 100%;
   flex-direction: column;
+  ${smallScreen} {
+    width: 100%;
+  }
 `;
 
 const ImageColumn = styled.section`
@@ -50,8 +53,12 @@ const Caption = styled.figcaption`
 
 const Total = styled.div`
   align-self: flex-end;
-  margin: 50px 0 0;
   font-size: 30px;
+  margin: 50px 0 0;
+
+  ${smallScreen} {
+    margin: 0;
+  }
 `;
 
 const OrderButton = styled.button`
