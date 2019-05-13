@@ -13,7 +13,7 @@ describe('Menu', () => {
       />,
     );
 
-    expect(menu.find('tr')).toHaveLength(2);
+    expect(menu.find('li')).toHaveLength(2);
   });
 
   it('shows the price in dollars', () => {
@@ -39,10 +39,10 @@ describe('Menu', () => {
       />,
     );
 
-    expect(menu.find('tr').at(0)).toIncludeText('x3');
-    expect(menu.find('tr').at(0)).toIncludeText('$15');
-    expect(menu.find('tr').at(1)).toIncludeText('x2');
-    expect(menu.find('tr').at(1)).toIncludeText('$4');
+    expect(menu.find('li').at(0)).toIncludeText('x3');
+    expect(menu.find('li').at(0)).toIncludeText('$15');
+    expect(menu.find('li').at(1)).toIncludeText('x2');
+    expect(menu.find('li').at(1)).toIncludeText('$4');
   });
 
   it('disables the decrease button when quantity is 0', () => {
@@ -57,14 +57,14 @@ describe('Menu', () => {
 
     expect(
       menu
-        .find('tr')
+        .find('li')
         .at(0)
         .find('button')
         .at(0),
     ).toBeDisabled();
     expect(
       menu
-        .find('tr')
+        .find('li')
         .at(1)
         .find('button')
         .at(0),
@@ -90,13 +90,13 @@ describe('Menu', () => {
     );
 
     menu
-      .find('tr')
+      .find('li')
       .at(0)
       .find('button')
       .at(1)
       .simulate('click');
     menu
-      .find('tr')
+      .find('li')
       .at(1)
       .find('button')
       .at(0)
