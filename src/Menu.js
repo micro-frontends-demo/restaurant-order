@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const bigScreen = `@media(min-width: 470px)`;
-
 const Title = styled.h2`
   font-size: 30px;
 `;
