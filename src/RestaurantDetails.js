@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Menu from './Menu';
 
-const smallScreen = `@media(max-width: 1050px)`;
+const smallScreen = `@media(max-width: 1080px)`;
 
 const Container = styled.div`
   display: flex;
@@ -43,6 +43,8 @@ const Figure = styled.figure`
 `;
 
 const Caption = styled.figcaption`
+  width: 500px;
+  max-width: 100%;
   font-size: 30px;
 `;
 
