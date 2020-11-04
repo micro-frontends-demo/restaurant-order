@@ -13,6 +13,18 @@ class Restaurant extends React.Component {
   }
 
   componentDidMount() {
+    this.getRestaurant();
+  }
+
+  componentDidUpdate() {
+    const {id} = this.props.match.params;
+    const {restaurant} = this.state;
+    if (id !== restaurant.id) {
+      this.getRestaurant();
+    }
+  }
+
+  getRestaurant() {
     const host = process.env.REACT_APP_CONTENT_HOST;
     const id = this.props.match.params.id;
 
